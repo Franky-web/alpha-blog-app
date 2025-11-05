@@ -13,8 +13,16 @@
         <tr>
             <td><%= article.title %></td>
             <td><%= article.description %></td>
-            <td>Placeholder</td>
+            <td class ="action-buttons">
+                <%= button_to 'Edit', edit_article_path(article), method: :get, class: "edit-button" %>
+                <%= button_to 'Delete', article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-button" %>
+            </td>
         </tr>
         <% end %>
+        <tr>
+            <td colspan="3">
+                <%= link_to 'Create New Article', new_article_path, class: "create-button" %>
+            </td>
+        </tr>
     </tbody>
 </table>
