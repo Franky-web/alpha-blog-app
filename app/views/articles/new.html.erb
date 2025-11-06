@@ -22,7 +22,8 @@
     <%= form.text_area :description%>
  </p>
 
- <p>
+ <div class="action-buttons">
     <%= form.submit "Create Article", class: "create-button" %>
- </p>
+    <%= link_to "Back to Articles", articles_path, class: "back-button" %>
+ </div>
 <% end %>

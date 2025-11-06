@@ -14,8 +14,9 @@
             <td><%= article.title %></td>
             <td><%= article.description %></td>
             <td class ="action-buttons">
+                <%= button_to 'Show', article_path(article), method: :get, class: "show-button" %>
                 <%= button_to 'Edit', edit_article_path(article), method: :get, class: "edit-button" %>
-                <%= button_to 'Delete', article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-button" %>
+                <%= button_to 'Delete', article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete #{article.title}?" }, class: "delete-button" %>
             </td>
         </tr>
         <% end %>
